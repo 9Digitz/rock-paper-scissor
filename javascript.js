@@ -1,5 +1,3 @@
-var playerSelection = 'paper' //prompt('Rock, Paper, or Scissors?');
-var computerSelection = 'rock' //getComputerChoice();
 let playerScore = 0;
 let computerScore = 0;
 // Computer Choice Generator
@@ -14,42 +12,47 @@ function getComputerChoice() {
     }
     //Game Logic
     function playRound() {
+        var playerSelection = prompt('Rock, Paper, or Scissors?');
+        var computerSelection = getComputerChoice();
         if (playerSelection === 'rock') {
             if (computerSelection === 'paper') {
                 computerScore++;
                 return 'You lose! Paper beats Rock!';
             } else if (computerSelection === 'scissors') {
-                playerScore = playerScore++;
+                playerScore++;
                 return 'You win! Rock beats scissors!'   
             } else {return 'You tied!';
             }
         } else if (playerSelection === 'paper') {
             if (computerSelection === 'rock') {
-                playerScore + 1;
+                playerScore++;
                 return 'You win! Paper beats Rock!';
             } else if (computerSelection === 'scissors') {
-                computerScore + 1;
+                computerScore++;
          return 'You lose! Scissors beats Paper';
           } else {
              return 'You tied!';
           }
         } else  (playerSelection === 'scissors') 
             if (computerSelection === 'rock') {
-                computerScore + 1;
+                computerScore++;
                 return 'You lose! Rock beats Scissors!'
             } else if (computerSelection === 'paper') {
-                playerScore + 1;
+                playerScore++;
                 return 'You win! Scissors beats Paper!';
             }
         }
-    //function game() {
-        //playRound(playerSelection, computerSelection) {
-          //  if (playerScore < 5 && computerScore < 5) {
-
-           // }
-
-      //  }
-       // }
+        function game() {
+            var playerSelection = prompt('Rock, Paper, or Scissors?');
+            var computerSelection = getComputerChoice();
+            playRound(playerSelection, computerSelection);
+                while (playerScore < 5 && computerScore < 5) {
+                    playRound(playerSelection, computerSelection);
+                }  if ( playerScore === 5) {
+                    return `'You win! You scored ${playerScore}, and the Computer only scored ${computerScore}!`;
+                } else return `You lose! You scored ${playerScore}, and the Computer scored ${computerScore}!`;
+            }
+        
     
     
     
