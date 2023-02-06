@@ -1,4 +1,4 @@
-let playerSelection = '';//prompt('Rock, Paper, or Scissors?');
+let playerSelection = '';
 let computerSelection = getComputerChoice();
 let playerScore = 0;
 let computerScore = 0;
@@ -58,6 +58,7 @@ function getComputerChoice() {
                 return ans;
             }
         }
+        // Plays 5 rounds returning results of each round and final score.
         function game() {
             playRound(playerSelection, computerSelection);
                 while (playerScore < 5 && computerScore < 5) {
