@@ -1,4 +1,4 @@
-let playerSelection = '';//prompt('Rock, Paper, or Scissors?');
+let playerSelection = prompt('Rock, Paper, or Scissors?');
 let computerSelection = getComputerChoice();
 let playerScore = 0;
 let computerScore = 0;
@@ -58,7 +58,8 @@ function getComputerChoice() {
         function game() {
             playRound(playerSelection, computerSelection);
                 while (playerScore < 5 && computerScore < 5) {
-                    playRound(playerSelection, computerSelection);
+                    console.log(ans)
+                    playRound(playerSelection, computerSelection)
                 }  if ( playerScore === 5) {
                     return `You win! You scored ${playerScore}, and the Computer only scored ${computerScore}!`;
                 } else return `You lose! You scored ${playerScore}, and the Computer scored ${computerScore}!`;
