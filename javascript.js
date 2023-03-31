@@ -1,7 +1,7 @@
-const btns = document.querySelectorAll('button');
-const rock = document.getElementById('rock');
-const paper = document.getElementById('paper');
-const scissors = document.getElementById('scissors');
+// const btns = document.querySelectorAll('button');                    *Unused variables 
+// const rock = document.getElementById('rock');
+// const paper = document.getElementById('paper');
+// const scissors = document.getElementById('scissors');
 let playerSelection = '';
 let computerSelection = '';
 let playerScore = 0;
@@ -12,7 +12,6 @@ let ans = '';
 function pickRock() {
     playerSelection = 'rock';
     playRound();
-    
 };
 function pickPaper() {
     playerSelection = 'paper';
@@ -20,8 +19,7 @@ function pickPaper() {
 };
 function pickScissors() {
     playerSelection = 'scissors';
-    playRound();
-    
+    playRound(); 
 };
 
 // Computer Choice Generator
@@ -36,7 +34,6 @@ function getComputerChoice() {
     }
     // Game Logic
     function playRound() {
-        // playerSelection = '';   //prompt('Rock, Paper, or Scissors?').toLowerCase();
         computerSelection = getComputerChoice();
         if (playerSelection === 'rock') {
             if (computerSelection === 'paper') {
@@ -98,20 +95,5 @@ function getComputerChoice() {
         document.getElementById('playerScore').innerText =`Player Score- ${playerScore}`;
         document.getElementById('computerScore').innerText = `Computer Score- ${computerScore}`;
         document.getElementById('roundResult').innerText = ans;
-    }
-
-        
-        // Plays 5 rounds returning results of each round and final score.
-        // function game() {
-        //     playRound(playerSelection, computerSelection);
-        //         while (playerScore < 5 && computerScore < 5) {
-        //             console.log(ans)
-        //             playRound(playerSelection, computerSelection)
-        //         }  if ( playerScore === 5) {
-        //             return `You win! You scored ${playerScore} , and the Computer only scored ${computerScore}!`;
-        //         } else return `You lose! You scored ${playerScore}, and the Computer scored ${computerScore}!`;
-        //     }
-        
-    
-    
+    };
     
