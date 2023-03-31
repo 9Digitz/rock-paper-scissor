@@ -64,11 +64,7 @@ function getComputerChoice() {
             ans = 'You tied!';
             
           }
-<<<<<<< HEAD
-        } else if (playerSelection === 'scissors') {
-=======
         } else if (playerSelection === 'scissors') 
->>>>>>> rps-ui
             if (computerSelection === 'rock') {
                 computerScore++;
                 ans = 'You lose! Rock beats Scissors!';
@@ -81,9 +77,6 @@ function getComputerChoice() {
                 ans = 'You tied!';
                 
             }
-<<<<<<< HEAD
-        }};
-=======
             document.getElementById('playerScore').innerText =`Player Score- ${playerScore}`;
             document.getElementById('computerScore').innerText = `Computer Score- ${computerScore}`;
             document.getElementById('roundResult').innerText = ans;
@@ -108,7 +101,6 @@ function getComputerChoice() {
     }
 
         
->>>>>>> rps-ui
         // Plays 5 rounds returning results of each round and final score.
         // function game() {
         //     playRound(playerSelection, computerSelection);
