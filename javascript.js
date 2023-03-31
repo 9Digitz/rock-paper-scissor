@@ -44,7 +44,7 @@ function getComputerChoice() {
             ans = 'You tied!';
             return ans;
           }
-        } else  (playerSelection === 'scissors') 
+        } else if (playerSelection === 'scissors') {
             if (computerSelection === 'rock') {
                 computerScore++;
                 ans = 'You lose! Rock beats Scissors!';
@@ -57,7 +57,7 @@ function getComputerChoice() {
                 ans = 'You tied!';
                 return ans;
             }
-        }
+        }};
         // Plays 5 rounds returning results of each round and final score.
         function game() {
             playRound(playerSelection, computerSelection);
