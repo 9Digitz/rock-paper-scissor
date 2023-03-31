@@ -8,6 +8,7 @@ let playerScore = 0;
 let computerScore = 0;
 let compNum = 0;
 let ans = '';
+
 function pickRock() {
     playerSelection = 'rock';
     playRound();
@@ -23,13 +24,6 @@ function pickScissors() {
     
 };
 
-
-
-
-
-
-
-
 // Computer Choice Generator
 function getComputerChoice() {
     let compNum = Math.floor(Math.random() * 100);
@@ -40,49 +34,73 @@ function getComputerChoice() {
     } else  (compChoice = 'scissors');
         return compChoice;
     }
-    //Game Logic
+    // Game Logic
     function playRound() {
-        //playerSelection = '';   //prompt('Rock, Paper, or Scissors?').toLowerCase();
+        // playerSelection = '';   //prompt('Rock, Paper, or Scissors?').toLowerCase();
         computerSelection = getComputerChoice();
         if (playerSelection === 'rock') {
             if (computerSelection === 'paper') {
                 computerScore++;
                 ans = 'You lose! Paper beats Rock!';
-                alert(ans);
+
+                
             } else if (computerSelection === 'scissors') {
                 playerScore++;
                 ans = 'You win! Rock beats scissors!';
-                alert(ans);  
+                  
             } else {ans = 'You tied!';
-            alert(ans);
+            
             }
         } else if (playerSelection === 'paper') {
             if (computerSelection === 'rock') {
                 playerScore++;
                 ans = 'You win! Paper beats Rock!';
-                alert(ans);
+                
             } else if (computerSelection === 'scissors') {
                 computerScore++;
                 ans = 'You lose! Scissors beats Paper';
-                alert(ans);
+                
           } else {
             ans = 'You tied!';
-            alert(ans);
+            
           }
         } else if (playerSelection === 'scissors') 
             if (computerSelection === 'rock') {
                 computerScore++;
                 ans = 'You lose! Rock beats Scissors!';
-                alert(ans);
+                
             } else if (computerSelection === 'paper') {
                 playerScore++;
                 ans = 'You win! Scissors beats Paper!';
-                alert(ans);
+                
             } else {
                 ans = 'You tied!';
-                alert(ans);
+                
             }
+            document.getElementById('playerScore').innerText =`Player Score- ${playerScore}`;
+            document.getElementById('computerScore').innerText = `Computer Score- ${computerScore}`;
+            document.getElementById('roundResult').innerText = ans;
+            checkScore();
         };
+    function checkScore() {
+        if (playerScore === 5 && computerScore < 5) {
+            alert(`You win! Score was ${playerScore} to ${computerScore}!`);
+            playerScore = 0;
+            computerScore = 0;
+            ans = '';
+        }
+        if (computerScore === 5 && playerScore < 5) {
+            alert(`You lose! Score was ${computerScore} to ${playerScore}!`);
+            playerScore = 0;
+            computerScore = 0;
+            ans = '';
+        }
+        document.getElementById('playerScore').innerText =`Player Score- ${playerScore}`;
+        document.getElementById('computerScore').innerText = `Computer Score- ${computerScore}`;
+        document.getElementById('roundResult').innerText = ans;
+    }
+
+        
         // Plays 5 rounds returning results of each round and final score.
         // function game() {
         //     playRound(playerSelection, computerSelection);
